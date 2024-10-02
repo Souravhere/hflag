@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import { CiMenuFries } from "react-icons/ci";
+import { IoMdClose } from "react-icons/io";
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -59,7 +61,7 @@ export default function Component() {
         >
           <div className="container mx-auto px-4 h-full flex items-center justify-between">
             <Link href="/" className="flex items-center">
-              <Image src="/logo.png" alt="Logo" width={65} height={65} />
+              <Image src="/logo.png" alt="Logo" width={60} height={60} />
             </Link>
 
             <nav className="hidden md:flex space-x-8">
@@ -76,7 +78,7 @@ export default function Component() {
               aria-label="Toggle menu"
               whileTap={{ scale: 0.95 }}
             >
-              {isMenuOpen ? 'Close' : 'Menu'}
+              {isMenuOpen ? <IoMdClose  size={28}/> : <CiMenuFries size={28}/>}
             </motion.button>
 
             <Link href="/contact" className="hidden md:block">
