@@ -15,7 +15,7 @@ const navItems = [
   { name: 'WhitePaper', path: '/whitepaper' },
 ]
 
-export default function Component() {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [showHeader, setShowHeader] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
@@ -78,7 +78,7 @@ export default function Component() {
               aria-label="Toggle menu"
               whileTap={{ scale: 0.95 }}
             >
-              {isMenuOpen ? <IoMdClose  size={28}/> : <CiMenuFries size={28}/>}
+              {isMenuOpen ? <IoMdClose  size={28}/> : <CiMenuFries size={28}/> }
             </motion.button>
 
             <Link href="/contact" className="hidden md:block">
