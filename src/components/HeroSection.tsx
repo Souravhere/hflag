@@ -58,7 +58,7 @@ export default function HeroSection() {
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.5 }}
             >
-              <TypeWriter text={orangeTexts[currentTextIndex]} isTyping={isTyping} setIsTyping={setIsTyping} setDisplayText={setDisplayText} />
+              <TypeWriter text={orangeTexts[currentTextIndex]} isTyping={isTyping} setIsTyping={setIsTyping} />
             </motion.span>
           </AnimatePresence>
         </motion.h1>
@@ -91,11 +91,16 @@ export default function HeroSection() {
           <MdOutlineArrowOutward className="ml-2" size={20} />
         </motion.button>
       </div>
+      <p>{displayText}</p> {/* Displaying the text */}
     </div>
   )
 }
 
-function TypeWriter({ text, isTyping, setIsTyping, setDisplayText }) {
+function TypeWriter({ text, isTyping, setIsTyping }: { 
+    text: string; 
+    isTyping: boolean; 
+    setIsTyping: (value: boolean) => void; 
+}) {
   const [displayText, setLocalDisplayText] = useState('')
 
   useEffect(() => {
