@@ -73,7 +73,7 @@ export default function Component() {
             </nav>
 
             <motion.button
-              className="md:hidden z-20 text-white"
+              className="md:hidden z-20 text-white" 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
               whileTap={{ scale: 0.95 }}
