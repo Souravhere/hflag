@@ -22,7 +22,7 @@ export default function HeroSection() {
       setCurrentTextIndex((prevIndex) => (prevIndex + 1) % orangeTexts.length);
       setDisplayText(''); // Reset displayText for the new word
       setIsTyping(true); // Start typing the new word
-    }, 4000); // Time for the complete cycle of typing + erasing
+    }, 1000); // Time for the complete cycle of typing + erasing
 
     return () => clearInterval(interval);
   }, [isTyping]);
@@ -127,7 +127,7 @@ function TypeWriter({ text, isTyping, setIsTyping }: {
           }
         }
       }
-    }, isErasing ? 150 : 150); // Adjusted speed for typing vs erasing
+    }, isErasing ? 150 : 200); // Adjusted speed for typing vs erasing
 
     return () => clearInterval(typingInterval);
   }, [text, isTyping, setIsTyping]);
