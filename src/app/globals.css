@@ -25,3 +25,9 @@ body {
     text-wrap: balance;
   }
 }
+/* In your global.css or a similar file */
+@layer utilities {
+  .text-glow-orange {
+    text-shadow: 0 0 10px rgba(213, 81, 35, 0.75), 0 0 20px rgba(213, 81, 35, 0.75);
+  }
+}
