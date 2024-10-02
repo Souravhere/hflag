@@ -95,7 +95,7 @@ export default function Header() {
           <AnimatePresence>
             {isMenuOpen && (
               <motion.nav
-                className="md:hidden bg-[#3D3737] py-4 fixed top-[60px] left-0 w-full h-screen flex flex-col"
+                className="md:hidden bg-[#3D3737] py-4 fixed top-[60px] left-0 w-full h-[calc(100vh-60px)] flex flex-col"
                 initial={{ x: "-100%", opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: "-100%", opacity: 0 }}
