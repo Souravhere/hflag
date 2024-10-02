@@ -13,21 +13,19 @@ const orangeTexts = [
 
 export default function HeroSection() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
-  const [isTyping, setIsTyping] = useState(true)
   const [displayText, setDisplayText] = useState('')
+  const [isTyping, setIsTyping] = useState(true)
   
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsTyping(false)
-      setTimeout(() => {
-        setCurrentTextIndex((prevIndex) => (prevIndex + 1) % orangeTexts.length)
-        setIsTyping(true)
-        setDisplayText('')  // Reset displayText for the new word
-      }, 1000)
-    }, 5000)
+      if (isTyping) return; // Wait for typing to finish before starting the next word
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % orangeTexts.length);
+      setDisplayText(''); // Reset displayText for the new word
+      setIsTyping(true); // Start typing the new word
+    }, 4000); // Time for the complete cycle of typing + erasing
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, [isTyping]);
 
   return (
     <div className="relative bg-[#1E1E1E] italic min-h-screen flex items-center justify-center overflow-hidden">
@@ -60,9 +58,7 @@ export default function HeroSection() {
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.5 }}
             >
-              {isTyping && (
-                <TypeWriter text={orangeTexts[currentTextIndex]} displayText={displayText} setDisplayText={setDisplayText} />
-              )}
+              <TypeWriter text={orangeTexts[currentTextIndex]} isTyping={isTyping} setIsTyping={setIsTyping} setDisplayText={setDisplayText} />
             </motion.span>
           </AnimatePresence>
         </motion.h1>
@@ -99,20 +95,37 @@ export default function HeroSection() {
   )
 }
 
-function TypeWriter({ text, displayText, setDisplayText }: { text: string, displayText: string, setDisplayText: React.Dispatch<React.SetStateAction<string>> }) {
+function TypeWriter({ text, isTyping, setIsTyping, setDisplayText }) {
+  const [displayText, setLocalDisplayText] = useState('')
+
   useEffect(() => {
-    let i = displayText.length
+    let i = 0;
+    let isErasing = false; // Track if we are erasing
     const typingInterval = setInterval(() => {
-      if (i < text.length) {
-        setDisplayText((prevText) => prevText + text.charAt(i))
-        i++
-      } else {
-        clearInterval(typingInterval)
+      if (isTyping) {
+        if (!isErasing) {
+          // Typing
+          if (i < text.length) {
+            setLocalDisplayText((prevText) => prevText + text.charAt(i));
+            i++;
+          } else {
+            isErasing = true; // Start erasing after typing is done
+          }
+        } else {
+          // Erasing
+          if (i > 0) {
+            setLocalDisplayText((prevText) => prevText.slice(0, -1));
+            i--;
+          } else {
+            isErasing = false; // Reset to typing mode
+            setIsTyping(false); // Indicate typing is done
+          }
+        }
       }
-    }, 100)
+    }, isErasing ? 150 : 150); // Adjusted speed for typing vs erasing
 
-    return () => clearInterval(typingInterval)
-  }, [text, displayText, setDisplayText])
+    return () => clearInterval(typingInterval);
+  }, [text, isTyping, setIsTyping]);
 
-  return <>{displayText}</>
+  return <>{displayText}</>;
 }
