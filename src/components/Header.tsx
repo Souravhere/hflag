@@ -95,14 +95,14 @@ export default function Header() {
           <AnimatePresence>
             {isMenuOpen && (
               <motion.nav
-                className="md:hidden bg-[#3D3737] py-4 fixed top-[100px] left-0 w-full h-[calc(100vh-100px)] flex flex-col"
+                className="md:hidden bg-[#3D3737] py-4 fixed top-[60px] left-0 w-full h-screen flex flex-col"
                 initial={{ x: "-100%", opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: "-100%", opacity: 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
                 <motion.div
-                  className="flex flex-col space-y-4 mt-8"
+                  className="flex flex-col space-y-4"
                   initial="closed"
                   animate="open"
                   variants={{
