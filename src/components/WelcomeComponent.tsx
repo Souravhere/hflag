@@ -84,7 +84,7 @@ export default function WelcomeComponent() {
                 <feature.icon size={60} className={`bg-[#2E2A2A] p-3 rounded-xl ${feature.color}`} />
               <div className="block">
               <h3 className={`text-xl font-semibold mb-1 text-left pl-5 ${feature.color}`}>{feature.title}</h3>
-              <p className="text-gray-300 text-sm px-3 font-bold">{feature.description}</p>
+              <p className="text-gray-300 text-sm pl-5 px-3  text-left font-bold">{feature.description}</p>
               </div>
             </motion.div>
           ))}

@@ -4,7 +4,7 @@ import { HoverEffect } from "../components/ui/card-hover-effect";
 export function Marketplace() {
   return (
     <div className="w-full italic bg-[#1e1e1e] mx-auto sm:px-8 px-2">
-         <h2  className="text-3xl md:text-5xl text-center font-bold text-white mb-12">
+         <h2  className="text-3xl md:text-5xl text-center font-bold text-white mt-6">
          Marketplace <span className="text-glow-orange text-[#ff6b35]">Overview</span>
         </h2>
       <HoverEffect items={projects} />
