@@ -3,46 +3,56 @@ import { HoverEffect } from "../components/ui/card-hover-effect";
 
 export function Marketplace() {
   return (
-    <div className="max-w-5xl mx-auto px-8">
+    <div className="w-full italic mx-auto px-8">
       <HoverEffect items={projects} />
     </div>
   );
 }
+
 export const projects = [
   {
-    title: "Stripe",
+    title: "Halal Marketplace",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
+      "Explore a global marketplace featuring rigorously halal-certified products, ensuring authenticity with every purchase.",
   },
   {
-    title: "Netflix",
+    title: "Halal Meat",
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-    link: "https://netflix.com",
+      "Discover a wide variety of halal meats, all certified by trusted authorities, meeting the demand for authentic halal food.",
   },
   {
-    title: "Google",
+    title: "Diverse Halal Goods",
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
-    link: "https://google.com",
+      "Shop an expanding range of halal-certified products, from packaged foods to personal care items—all in one place!",
   },
   {
-    title: "Meta",
+    title: "Blockchain",
     description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
+      "Trust in our blockchain technology for verifiable halal certifications, ensuring every product’s authenticity.",
   },
   {
-    title: "Amazon",
+    title: "Supply Chain",
     description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
+      "Trace the journey of your halal products from farm to table, providing peace of mind through unmatched transparency.",
   },
   {
-    title: "Microsoft",
+    title: "Hflag Token",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
+      "Enjoy seamless transactions using Hflag tokens. Convert tokens into points for flexible shopping options!",
+  },
+  {
+    title: "Verified Vendors",
+    description:
+      "Shop from rigorously verified vendors with transparent product details, ensuring you make informed choices every time.",
+  },
+  {
+    title: "Global Access",
+    description:
+      "Experience the convenience of cross-border halal shopping with our multilingual platform, catering to a global audience.",
+  },
+  {
+    title: "Earn Rewards",
+    description:
+      "Join our loyalty program to earn Hflag tokens for purchases and referrals, unlocking exclusive offers and discounts!",
   },
 ];
