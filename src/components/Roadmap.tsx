@@ -1,7 +1,7 @@
 'use client'
 
-import React from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const roadmapData = [
   {
@@ -31,7 +31,7 @@ const roadmapData = [
     color: 'bg-blue-500',
     items: [
       'Global Partnership Efforts: Pursue global partnerships.',
-      'Beta Service Launch: Launch the beta version of Hflags service.',
+      'Beta Service Launch: Launch the beta version of Hflag’s service.',
       'User Onboarding Expansion: Expand user onboarding efforts.',
     ],
   },
@@ -52,15 +52,15 @@ const roadmapData = [
       'Global Expansion: Focus on global expansion.',
     ],
   },
-]
+];
 
 export default function Roadmap() {
-  const { scrollYProgress } = useScroll()
-  const drawProgress = useTransform(scrollYProgress, [0, 1], [0, 1])
+  const { scrollYProgress } = useScroll();
+  const drawProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <div className="min- italic bg-[#1e1e1e] py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      
+    <div className="min-h-screen italic bg-[#1e1e1e] py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -70,48 +70,62 @@ export default function Roadmap() {
         <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-12">
           Road <span className="text-orange-500">Map</span>
         </h2>
-        
-        <div className="relative">
+
+        {/* Roadmap Timeline */}
+        <div className="relative flex flex-col lg:flex-row items-start justify-center">
+          {/* SVG Line for Timeline */}
           <motion.div
-            className="absolute left-1/2 top-0 w-1 h-full bg-white transform -translate-x-1/2"
+            className="absolute left-0 lg:left-1/2 sm:-mt-[120px] -mt-[60px] ml-2 top-0 w-1 lg:w-2 h-full bg-gradient-to-b from-orange-500 to-blue-500 lg:transform lg:-translate-x-1/2"
             style={{ scaleY: drawProgress }}
           />
-          
-          {roadmapData.map((quarter, index) => (
-            <motion.div
-              key={quarter.quarter}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`flex flex-col md:flex-row items-center md:items-start gap-4 mb-12 ${
-                index % 2 === 0 ? 'md:flex-row-reverse' : ''
-              }`}
-            >
-              <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className={`${quarter.color} text-white font-bold py-2 px-4 rounded-lg inline-block mb-4`}
+
+          {/* Roadmap Items */}
+          <div className="w-full sm:ml-0 ml-6">
+            {roadmapData.map((quarter, index) => (
+              <motion.div
+                key={quarter.quarter}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`flex flex-col lg:flex-row items-center lg:items-start gap-6 mb-12 ${
+                  index % 2 === 0 ? 'lg:flex-row-reverse' : ''
+                }`}
+              >
+                {/* Quarter Section */}
+                <div
+                  className={`w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}
                 >
-                  {quarter.quarter}
-                </motion.div>
-                <ul className={`list-disc ${index % 2 === 0 ? 'md:list-inside' : 'md:ml-6'} text-gray-300`}>
-                  {quarter.items.map((item, itemIndex) => (
-                    <motion.li
-                      key={itemIndex}
-                      initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
-                    >
-                      {item}
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-              <div className="w-4 h-4 rounded-full bg-white absolute left-1/2 top-0 transform -translate-x-1/2" />
-            </motion.div>
-          ))}
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className={`${quarter.color} text-white font-bold py-2 px-4 rounded-lg inline-block mb-4`}
+                  >
+                    {quarter.quarter}
+                  </motion.div>
+
+                  <ul className={`list-disc ${index % 2 === 0 ? 'lg:list-inside' : 'lg:ml-6'} text-gray-300`}>
+                    {quarter.items.map((item, itemIndex) => (
+                      <motion.li
+                        key={itemIndex}
+                        initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
+                      >
+                        {item}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Circle Indicator */}
+                <motion.div
+                  className="w-6 h-6 rounded-full bg-white sm:absolute hidden left-0 lg:left-1/2 transform lg:-translate-x-1/2"
+                  style={{ scale: drawProgress }}
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.div>
     </div>
-  )
+  );
 }
