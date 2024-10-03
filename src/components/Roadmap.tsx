@@ -4,55 +4,56 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const roadmapData = [
-  {
-    quarter: '2024 Q4',
-    color: 'bg-orange-500',
-    items: [
-      'Team Formation: Assemble the Hflag project team.',
-      'Company Establishment: Form the Hflag corporation.',
-      'Website Launch: Launch the official Hflag website.',
-      'Token Issuance: Issue and distribute the Hflag token.',
-      'Community Building: Grow the Hflag community.',
-      'Business Plan & Whitepaper: Develop the blockchain business plan and create Whitepaper 1.0.',
-      'Marketing Events: Initiate marketing events for Hflag.',
-    ],
-  },
-  {
-    quarter: '2025 Q1',
-    color: 'bg-green-500',
-    items: [
-      'Exchange Listing Efforts: Begin efforts to list Hflag on exchanges.',
-      'Building Partnerships: Establish key partnerships.',
-      'Service Development: Develop the Hflag service.',
-    ],
-  },
-  {
-    quarter: '2025 Q2',
-    color: 'bg-blue-500',
-    items: [
-      'Global Partnership Efforts: Pursue global partnerships.',
-      'Beta Service Launch: Launch the beta version of Hflag’s service.',
-      'User Onboarding Expansion: Expand user onboarding efforts.',
-    ],
-  },
-  {
-    quarter: '2025 Q3',
-    color: 'bg-purple-500',
-    items: [
-      'Service Expansion and Upgrades: Expand and upgrade the service.',
-      'Service Stabilization: Ensure service stability.',
-    ],
-  },
-  {
-    quarter: '2025 Q4',
-    color: 'bg-orange-500',
-    items: [
-      'Dapp Service Development: Develop Dapp services.',
-      'Dapp Service Expansion: Expand Dapp services.',
-      'Global Expansion: Focus on global expansion.',
-    ],
-  },
-];
+    {
+      quarter: '2024 Q4',
+      color: 'bg-orange-500',
+      items: [
+        'Team Formation',
+        'Company Establishment',
+        'Website Launch',
+        'Token Issuance',
+        'Community Building',
+        'Business Plan & Whitepaper',
+        'Marketing Events',
+      ],
+    },
+    {
+      quarter: '2025 Q1',
+      color: 'bg-green-500',
+      items: [
+        'Exchange Listing Efforts',
+        'Partnership Building',
+        'Service Development',
+      ],
+    },
+    {
+      quarter: '2025 Q2',
+      color: 'bg-blue-500',
+      items: [
+        'Global Partnerships',
+        'Beta Service Launch',
+        'User Onboarding Expansion',
+      ],
+    },
+    {
+      quarter: '2025 Q3',
+      color: 'bg-purple-500',
+      items: [
+        'Service Expansion & Upgrades',
+        'Service Stabilization',
+      ],
+    },
+    {
+      quarter: '2025 Q4',
+      color: 'bg-orange-500',
+      items: [
+        'Dapp Development',
+        'Dapp Expansion',
+        'Global Expansion',
+      ],
+    },
+  ];
+  
 
 export default function Roadmap() {
   const { scrollYProgress } = useScroll();
@@ -75,12 +76,12 @@ export default function Roadmap() {
         <div className="relative flex flex-col lg:flex-row items-start justify-center">
           {/* SVG Line for Timeline */}
           <motion.div
-            className="absolute left-0 lg:left-1/2 sm:-mt-[120px] -mt-[60px] ml-2 top-0 w-1 lg:w-2 h-full bg-gradient-to-b from-orange-500 to-blue-500 lg:transform lg:-translate-x-1/2"
+            className="absolute left-0 lg:left-1/2 sm:-mt-[120px] rounded-full -mt-[60px] ml-2 top-0 w-1 lg:w-2 h-full bg-gradient-to-b from-orange-500 to-blue-500 lg:transform lg:-translate-x-1/2"
             style={{ scaleY: drawProgress }}
           />
 
           {/* Roadmap Items */}
-          <div className="w-full sm:ml-0 ml-6">
+          <div className="w-full sm:ml-0 ml-24">
             {roadmapData.map((quarter, index) => (
               <motion.div
                 key={quarter.quarter}
@@ -102,7 +103,7 @@ export default function Roadmap() {
                     {quarter.quarter}
                   </motion.div>
 
-                  <ul className={`list-disc ${index % 2 === 0 ? 'lg:list-inside' : 'lg:ml-6'} text-gray-300`}>
+                  <ul className={`list-disc ${index % 2 === 0 ? 'lg:list-inside ' : 'lg:ml-6'} text-gray-300`}>
                     {quarter.items.map((item, itemIndex) => (
                       <motion.li
                         key={itemIndex}
