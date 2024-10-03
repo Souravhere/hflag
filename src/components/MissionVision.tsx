@@ -70,7 +70,7 @@ export default function MissionVision() {
             variants={itemVariants}
             className="lg:w-1/2 flex flex-wrap justify-center lg:justify-end gap-4"
           >
-            {values.map((value, _index) => (
+            {values.map((value) => (
               <motion.div
                 key={value.name}
                 variants={itemVariants}
