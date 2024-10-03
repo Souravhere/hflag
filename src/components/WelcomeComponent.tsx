@@ -58,7 +58,12 @@ export default function WelcomeComponent() {
   }
 
   return (
-    <div className="min-h-fit italic bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="h-fit relative overflow-x-hidden overflow-y-hidden italic bg-[#1E1E1E] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <motion.div 
+        className="absolute -top-10 -right-10 w-64 h-64 bg-[#D55123] rounded-full filter blur-3xl opacity-20 translate-x-1/2 -translate-y-1/2" 
+        animate={{ x: [10, -10], y: [-10, 10] }} 
+        transition={{ duration: 3, yoyo: Infinity, ease: "easeInOut" }}
+      />
       <motion.div
         ref={ref}
         initial="hidden"
