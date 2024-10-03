@@ -91,7 +91,7 @@ export default function CommunityBuilding() {
           variants={itemVariants}
           className="text-4xl font-bold text-center text-white mb-12"
         >
-          Community <span className="text-glow-orange">Building</span>
+          Community <span className="text-glow-orange text-[#ff6b35]">Building</span>
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-4 sm:gap-8 gap-3">
           {communityFeatures.map((feature, index) => (

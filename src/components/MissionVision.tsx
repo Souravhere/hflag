@@ -23,7 +23,7 @@ export default function MissionVision() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.3,
       },
     },
   }
@@ -53,7 +53,7 @@ export default function MissionVision() {
           variants={itemVariants}
           className="text-4xl md:text-5xl font-bold text-center text-white mb-12"
         >
-          Mission & <span className="text-orange-500">Vision</span>
+          Mission & <span className="text-orange-500 text-glow-orange">Vision</span>
         </motion.h2>
         
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
@@ -74,9 +74,9 @@ export default function MissionVision() {
               <motion.div
                 key={value.name}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
-                className={`${value.color} text-white font-semibold py-2 px-6 rounded-full text-center`}
+                className={`${value.color} text-white font-semibold py-2 px-6 rounded-full text-center shadow-lg transition-all duration-200`}
               >
                 {value.name}
               </motion.div>

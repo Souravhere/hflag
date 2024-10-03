@@ -69,7 +69,7 @@ export default function Roadmap() {
         className="max-w-7xl mx-auto relative"
       >
         <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-12">
-          Road <span className="text-orange-500">Map</span>
+          Road <span className="text-orange-500 text-glow-orange">Map</span>
         </h2>
 
         {/* Roadmap Timeline */}
