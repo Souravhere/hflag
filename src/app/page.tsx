@@ -2,6 +2,7 @@ import CommunityBuilding from "@/components/CommunityBuilding";
 import HeroSection from "@/components/HeroSection";
 import { Marketplace } from "@/components/Marketplace";
 import MissionVision from "@/components/MissionVision";
+import Roadmap from "@/components/Roadmap";
 import WelcomeComponent from "@/components/WelcomeComponent";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <CommunityBuilding/>
         {/* one section added here soon */}
         <MissionVision/>
+        <Roadmap/>
     </div>
   );
 }
