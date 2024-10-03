@@ -72,7 +72,7 @@ export default function WelcomeComponent() {
         className="max-w-7xl mx-auto text-center"
       >
         <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold text-white mb-12">
-          Welcome to <span className="text-glow-orange">HFLAG</span>
+          Welcome to <span className="text-glow-orange text-[#ff6b35]">HFLAG</span>
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
