@@ -43,19 +43,19 @@ export const projects = [
     description:
       "Enjoy seamless transactions using Hflag tokens. Convert tokens into points for flexible shopping options!",
   },
-  {
-    title: "Verified Vendors",
-    description:
-      "Shop from rigorously verified vendors with transparent product details, ensuring you make informed choices every time.",
-  },
-  {
-    title: "Global Access",
-    description:
-      "Experience the convenience of cross-border halal shopping with our multilingual platform, catering to a global audience.",
-  },
-  {
-    title: "Earn Rewards",
-    description:
-      "Join our loyalty program to earn Hflag tokens for purchases and referrals, unlocking exclusive offers and discounts!",
-  },
+//   {
+//     title: "Verified Vendors",
+//     description:
+//       "Shop from rigorously verified vendors with transparent product details, ensuring you make informed choices every time.",
+//   },
+//   {
+//     title: "Global Access",
+//     description:
+//       "Experience the convenience of cross-border halal shopping with our multilingual platform, catering to a global audience.",
+//   },
+//   {
+//     title: "Earn Rewards",
+//     description:
+//       "Join our loyalty program to earn Hflag tokens for purchases and referrals, unlocking exclusive offers and discounts!",
+//   },
 ];
