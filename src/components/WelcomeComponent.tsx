@@ -58,7 +58,7 @@ export default function WelcomeComponent() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-fit italic bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -74,13 +74,13 @@ export default function WelcomeComponent() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-gray-800 rounded-lg px-3 py-2 flex items-center shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="flex items-center justify-center mb-4">
-                <feature.icon className={`text-4xl ${feature.color}`} />
+                <feature.icon size={60} className={`bg-[#2E2A2A] p-3 rounded-xl ${feature.color}`} />
+              <div className="block">
+              <h3 className={`text-xl font-semibold mb-1 text-left pl-5 ${feature.color}`}>{feature.title}</h3>
+              <p className="text-gray-300 text-sm px-3 font-bold">{feature.description}</p>
               </div>
-              <h3 className={`text-xl font-semibold mb-2 ${feature.color}`}>{feature.title}</h3>
-              <p className="text-gray-300 text-sm">{feature.description}</p>
             </motion.div>
           ))}
         </div>
