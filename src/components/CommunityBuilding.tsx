@@ -11,36 +11,42 @@ const communityFeatures = [
     title: 'Engagement',
     description: 'Community building fosters active participation among users, encouraging them to engage with the Hflag ecosystem more meaningfully.',
     color: 'bg-purple-600',
+    border:'border-purple-600'
   },
   {
     icon: RiShieldLine,
     title: 'Trust',
     description: 'By cultivating a strong sense of community, Hflag can build trust and loyalty among its members. When users feel connected and valued.',
     color: 'bg-blue-600',
+    border:'border-blue-600'
   },
   {
     icon: RiFileList2Line,
     title: 'Feedback',
     description: 'A robust community serves as a valuable source of feedback and insights. By encouraging open communication and discussions.',
     color: 'bg-green-600',
+    border:'border-green-600'
   },
   {
     icon: RiVideoLine,
     title: 'Educational',
     description: 'Community building allows Hflag to educate its members about blockchain technology, halal certification, and the projects goals.',
     color: 'bg-blue-600',
+    border:'border-blue-600'
   },
   {
     icon: RiNodeTree,
     title: 'Ecosystem',
     description: 'A well-engaged community contributes to the sustainability of the Hflag ecosystem. As members actively participate in governance.',
     color: 'bg-green-600',
+    border:'border-green-600'
   },
   {
     icon: RiGlobalLine,
     title: 'Global Outreach',
     description: 'By fostering a diverse and inclusive community, Hflag can reach users from various backgrounds and regions.',
     color: 'bg-purple-600',
+    border:'border-purple-600'
   },
 ]
 
@@ -73,7 +79,7 @@ export default function CommunityBuilding() {
   }
 
   return (
-    <div className="min-h-screen bg-[#1e1e1e] italic  px-4 sm:px-6 lg:px-8">
+    <div className="h-fit bg-[#1e1e1e] italic py-4 px-4 sm:px-6 lg:px-8">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -87,17 +93,19 @@ export default function CommunityBuilding() {
         >
           Community <span className="text-glow-orange">Building</span>
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-4 sm:gap-8 gap-3">
           {communityFeatures.map((feature, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className={`bg-black border ${feature.border} rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300`}
             >
-              <div className={`${feature.color} rounded-full p-3 inline-block mb-4`}>
-                <feature.icon className="text-white text-2xl" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
+                <div className='flex items-center gap-4'>
+                    <div className={`${feature.color} rounded-xl p-3 inline-block mb-4`}>
+                    <feature.icon className="text-white text-2xl" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
+                </div>
               <p className="text-gray-400 text-sm">{feature.description}</p>
             </motion.div>
           ))}
