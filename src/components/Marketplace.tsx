@@ -3,7 +3,7 @@ import { HoverEffect } from "../components/ui/card-hover-effect";
 
 export function Marketplace() {
   return (
-    <div className="w-full italic mx-auto px-8">
+    <div className="w-full italic mx-auto sm:px-8 px-2">
       <HoverEffect items={projects} />
     </div>
   );
