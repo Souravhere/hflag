@@ -5,9 +5,12 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaExchangeAlt, FaLock, FaCrown, FaMobileAlt } from 'react-icons/fa';
 import dynamic from 'next/dynamic';
+import { ApexOptions } from 'apexcharts'; // Import ApexOptions type
 
+// Dynamically import Chart to prevent SSR issues
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
+// Token utilities array
 const tokenUtilities = [
   {
     icon: FaExchangeAlt,
@@ -31,6 +34,7 @@ const tokenUtilities = [
   },
 ];
 
+// Token distribution array
 const tokenDistribution = [
   { title: 'Sale', value: 30, color: '#FF6384' },
   { title: 'Ecosystem', value: 20, color: '#36A2EB' },
@@ -40,12 +44,13 @@ const tokenDistribution = [
   { title: 'Reserve', value: 10, color: '#FF9F40' },
 ];
 
-export default function HflagTokenPage() {
+export default function page() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  const chartOptions = {
+  // Explicitly typed ApexOptions for the chart configuration
+  const chartOptions: ApexOptions = {
     chart: {
-      type: 'pie',
+      type: 'pie', // Type is correctly defined as 'pie'
       animations: {
         enabled: true,
         easing: 'easeinout',
@@ -84,6 +89,8 @@ export default function HflagTokenPage() {
         <motion.h1 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="text-4xl md:text-5xl font-bold text-center mb-12">
           Hflag Token <span className="text-orange-500">Utility</span>
         </motion.h1>
+
+        {/* Token Utilities */}
         <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {tokenUtilities.map((utility, index) => (
             <motion.div
@@ -102,6 +109,8 @@ export default function HflagTokenPage() {
         <motion.h2 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="text-3xl md:text-4xl font-bold text-center mb-8">
           Token <span className="text-orange-500">Distribution</span>
         </motion.h2>
+
+        {/* Chart and Distribution Breakdown */}
         <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="flex flex-col md:flex-row items-center justify-center gap-8">
           <div className="w-full md:w-1/2 max-w-md">
             <Chart options={chartOptions} series={chartSeries} type="pie" height="320" />
@@ -120,6 +129,7 @@ export default function HflagTokenPage() {
         <motion.h2 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="text-3xl md:text-4xl font-bold text-center mb-8">
           Hflag Token <span className="text-orange-500">Rewards</span>
         </motion.h2>
+
         <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="bg-gray-800 rounded-lg p-6 shadow-lg mb-12">
           <h3 className="text-xl font-semibold text-orange-500 mb-4">Leaderboard and Competitive Incentives</h3>
           <p className="text-gray-300 mb-6">
