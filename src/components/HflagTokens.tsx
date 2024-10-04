@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import Link from 'next/link'
-import { FaCoins, FaLock, FaUsers } from 'react-icons/fa'
-import { MdOutlineArrowOutward } from "react-icons/md";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import Link from 'next/link';
+import { FaCoins, FaLock, FaUsers } from 'react-icons/fa';
+import { MdOutlineArrowOutward } from 'react-icons/md';
 
 const tokenFeatures = [
   {
@@ -23,36 +23,36 @@ const tokenFeatures = [
     title: 'Community Engagement',
     description: 'Participate in governance and shape the future of the Hflag ecosystem.',
   },
-]
+];
 
 export default function HflagTokens() {
   const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
+    triggerOnce: true, // Only trigger the animation once when in view
+    threshold: 0.1,    // How much of the element should be in view before triggering
+  });
 
+  // Container animation (stagger children appearance)
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
-        staggerChildren: 0.1,
+        duration: 0.7,
+        staggerChildren: 0.15, // Stagger each child’s appearance
       },
     },
-  }
+  };
 
+  // Individual item animation
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.5,
-      },
+      transition: { duration: 0.6 },
     },
-  }
+  };
 
   return (
     <motion.div
@@ -63,7 +63,10 @@ export default function HflagTokens() {
       className="bg-[#1e1e1e] py-16 px-4 sm:px-6 italic lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
-        <motion.div variants={itemVariants} className="bg-emerald-700 rounded-lg overflow-hidden shadow-2xl">
+        <motion.div
+          variants={itemVariants}
+          className="bg-emerald-700 rounded-lg overflow-hidden shadow-2xl"
+        >
           <div className="p-8 sm:p-10 lg:flex lg:items-center lg:justify-between">
             <div className="lg:w-0 lg:flex-1">
               <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
@@ -75,7 +78,10 @@ export default function HflagTokens() {
             </div>
             <div className="mt-8 lg:mt-0 lg:ml-8">
               <div className="inline-flex rounded-md shadow">
-                <Link href="/learn-about-tokens" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-bold rounded-md text-white bg-orange-500 hover:bg-orange-400 transition-colors duration-300">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-bold rounded-md text-white bg-orange-500 hover:bg-orange-400 transition-colors duration-300"
+                >
                   Learn About Hflag Tokens
                   <MdOutlineArrowOutward className="ml-3 -mr-1 h-5 w-5" />
                 </Link>
@@ -84,11 +90,16 @@ export default function HflagTokens() {
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {/* Features Section */}
+        <motion.div
+          variants={containerVariants}
+          className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           {tokenFeatures.map((feature, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
               className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex items-center justify-center w-12 h-12 rounded-md bg-orange-500 text-white mb-4">
@@ -100,16 +111,21 @@ export default function HflagTokens() {
           ))}
         </motion.div>
 
+        {/* Call to Action */}
         <motion.div variants={itemVariants} className="mt-12 text-center">
           <p className="text-xl text-gray-300">
             Ready to start your journey with Hflag Tokens?
           </p>
-          <Link href="/get-started" className="mt-4 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-400 transition-colors duration-300">
+          <Link
+            href="/token"
+            className="mt-4 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-400 transition-colors duration-300"
+          >
             Get Started Now
             <MdOutlineArrowOutward className="ml-2 -mr-1 h-5 w-5" />
           </Link>
         </motion.div>
       </div>
     </motion.div>
-  )
+  );
 }
+fe
