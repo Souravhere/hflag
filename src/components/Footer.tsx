@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Link from 'next/link'
 import { FaTelegramPlane, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import Image from 'next/image'
 
 const footerSections = [
   {
@@ -75,18 +76,11 @@ export default function Footer() {
       variants={containerVariants}
       className="bg-[#1e1e1e] text-white py-12 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 italic md:grid-cols-2 lg:grid-cols-4 gap-8">
         <motion.div variants={itemVariants} className="col-span-1 md:col-span-2 lg:col-span-1">
           <Link href="/" className="flex items-center mb-4">
-            <motion.svg
-              whileHover={{ scale: 1.1 }}
-              className="h-10 w-10 text-orange-500"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </motion.svg>
-            <span className="ml-2 text-2xl font-bold">HFLAG</span>
+          <Image src="/logo.png" alt="Logo" width={60} height={60} />
+            <span className="text-2xl font-bold">HFLAG</span>
           </Link>
           <p className="text-sm text-gray-400 mb-4">
             Empowering Halal Living with Global Access and Community.
