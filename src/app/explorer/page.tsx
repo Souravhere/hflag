@@ -73,7 +73,7 @@ export default function ExplorerPage() {
     >
       <div className="max-w-7xl mx-auto">
         <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-center mb-8">
-          Hflag <span className="text-orange-500">Explorer</span>
+          Hflag <span className="text-orange-500 text-glow-orange">Explorer</span>
         </motion.h1>
 
         <motion.p variants={itemVariants} className="text-lg text-gray-300 text-center mb-12">
