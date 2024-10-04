@@ -44,7 +44,7 @@ const tokenDistribution = [
   { title: 'Reserve', value: 10, color: '#FF9F40' },
 ];
 
-export default function page() {
+export default function HflagTokenPage() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   // Explicitly typed ApexOptions for the chart configuration
