@@ -1,5 +1,6 @@
 import CommunityBuilding from "@/components/CommunityBuilding";
 import HeroSection from "@/components/HeroSection";
+import HflagTokens from "@/components/HflagTokens";
 import { Marketplace } from "@/components/Marketplace";
 import MissionVision from "@/components/MissionVision";
 import Roadmap from "@/components/Roadmap";
@@ -11,7 +12,7 @@ export default function Home() {
         <HeroSection/>
         <WelcomeComponent/>
         <Marketplace/>
-        {/* one section added here soon */}
+        <HflagTokens/>
         <CommunityBuilding/>
         {/* one section added here soon */}
         <MissionVision/>
