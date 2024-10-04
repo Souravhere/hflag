@@ -88,7 +88,7 @@ export default function AboutPage() {
     >
       <div className="max-w-7xl mx-auto">
         <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-center mb-12">
-          About <span className="text-orange-500">Hflag</span>
+          About <span className="text-orange-500 text-glow-orange">Hflag</span>
         </motion.h1>
 
         <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -108,7 +108,7 @@ export default function AboutPage() {
         </motion.div>
 
         <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold text-center mb-8">
-          Our <span className="text-orange-500">Mission & Vision</span>
+          Our <span className="text-orange-500 text-glow-orange">Mission & Vision</span>
         </motion.h2>
 
         <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-8">

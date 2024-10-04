@@ -82,12 +82,12 @@ export default function HflagTokenPage() {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.5, staggerChildren: 0.2 } },
       }}
-      className="min-h-screen bg-[#1e1e1e] text-white py-20 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen bg-[#1e1e1e] italic text-white py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Hflag Token Utility Section */}
         <motion.h1 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="text-4xl md:text-5xl font-bold text-center mb-12">
-          Hflag Token <span className="text-orange-500">Utility</span>
+          Hflag Token <span className="text-orange-500 text-glow-orange">Utility</span>
         </motion.h1>
 
         {/* Token Utilities */}
