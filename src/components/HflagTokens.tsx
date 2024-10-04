@@ -4,7 +4,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Link from 'next/link'
-import { FaArrowRight, FaCoins, FaLock, FaUsers } from 'react-icons/fa'
+import { FaCoins, FaLock, FaUsers } from 'react-icons/fa'
+import { MdOutlineArrowOutward } from "react-icons/md";
 
 const tokenFeatures = [
   {
@@ -59,7 +60,7 @@ export default function HflagTokens() {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className="bg-[#1e1e1e] py-16 px-4 sm:px-6 lg:px-8"
+      className="bg-[#1e1e1e] py-16 px-4 sm:px-6 italic lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div variants={itemVariants} className="bg-emerald-700 rounded-lg overflow-hidden shadow-2xl">
@@ -74,9 +75,9 @@ export default function HflagTokens() {
             </div>
             <div className="mt-8 lg:mt-0 lg:ml-8">
               <div className="inline-flex rounded-md shadow">
-                <Link href="/learn-about-tokens" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-emerald-900 bg-orange-500 hover:bg-orange-400 transition-colors duration-300">
+                <Link href="/learn-about-tokens" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-bold rounded-md text-white bg-orange-500 hover:bg-orange-400 transition-colors duration-300">
                   Learn About Hflag Tokens
-                  <FaArrowRight className="ml-3 -mr-1 h-5 w-5" />
+                  <MdOutlineArrowOutward className="ml-3 -mr-1 h-5 w-5" />
                 </Link>
               </div>
             </div>
@@ -105,7 +106,7 @@ export default function HflagTokens() {
           </p>
           <Link href="/get-started" className="mt-4 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-400 transition-colors duration-300">
             Get Started Now
-            <FaArrowRight className="ml-2 -mr-1 h-5 w-5" />
+            <MdOutlineArrowOutward className="ml-2 -mr-1 h-5 w-5" />
           </Link>
         </motion.div>
       </div>
