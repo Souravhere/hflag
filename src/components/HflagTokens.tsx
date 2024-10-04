@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Link from 'next/link'
-import { FaArrowRight, FaCoins, FaLock, FaUsers, FaChartLine, FaGlobe } from 'react-icons/fa'
+import { FaArrowRight, FaCoins, FaLock, FaUsers } from 'react-icons/fa'
 
 const tokenFeatures = [
   {
@@ -21,16 +21,6 @@ const tokenFeatures = [
     icon: FaUsers,
     title: 'Community Engagement',
     description: 'Participate in governance and shape the future of the Hflag ecosystem.',
-  },
-  {
-    icon: FaChartLine,
-    title: 'Growth Potential',
-    description: 'Benefit from the potential increase in token value as the ecosystem expands.',
-  },
-  {
-    icon: FaGlobe,
-    title: 'Global Halal Network',
-    description: 'Connect with a worldwide community of halal-conscious individuals and businesses.',
   },
 ]
 
@@ -69,7 +59,7 @@ export default function HflagTokens() {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className="bg-gray-900 py-16 px-4 sm:px-6 lg:px-8"
+      className="bg-[#1e1e1e] py-16 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div variants={itemVariants} className="bg-emerald-700 rounded-lg overflow-hidden shadow-2xl">
