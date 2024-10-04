@@ -92,7 +92,7 @@ export default function WhitePaperPage() {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className="min-h-screen bg-[#1e1e1e] text-white py-20 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen bg-[#1e1e1e] italic text-white py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-4xl mx-auto">
         <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-center mb-8">

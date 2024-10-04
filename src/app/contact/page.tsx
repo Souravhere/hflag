@@ -50,8 +50,20 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // In a real application, this would send the form data to a server
-    console.log('Sending email to jeff@yellow-labs.net with data:', formData)
+
+    // Create the email subject and body
+    const subject = encodeURIComponent('Contact Form Submission')
+    const body = encodeURIComponent(
+      `First Name: ${formData.firstName}\n` +
+      `Last Name: ${formData.lastName}\n` +
+      `Email: ${formData.email}\n` +
+      `Comment: ${formData.comment}`
+    )
+
+    // Redirect to mailto link
+    window.location.href = `mailto:jeff@yellow-labs.net?subject=${subject}&body=${body}`
+
+    // Optionally alert the user
     alert('Thank you for your message. We will get back to you soon!')
   }
 
@@ -61,7 +73,7 @@ export default function ContactPage() {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className="min-h-screen bg-[#1e1e1e] text-white py-20 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen italic bg-[#1e1e1e] text-white py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-3xl mx-auto">
         <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-center mb-8">
@@ -69,17 +81,16 @@ export default function ContactPage() {
         </motion.h1>
 
         <motion.p variants={itemVariants} className="text-lg text-gray-300 text-center mb-12">
-          We love to hear from you. Please fill out the form below, and well get back to you as soon as possible.
+          We love to hear from you. Please fill out the form below, and we'll get back to you as soon as possible.
         </motion.p>
         {/* Top content for trust-building */}
         <motion.div variants={itemVariants} className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-2">W are Here to Help</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-2">We Are Here to Help</h2>
           <p className="text-lg text-gray-300 mb-4">
             At Hflag, we value your feedback and are committed to providing excellent service. 
-            If you have questions, suggestions, or just want to connect, dont hesitate to reach out!
+            If you have questions, suggestions, or just want to connect, don't hesitate to reach out!
           </p>
         </motion.div>
-
 
         <motion.form
           variants={itemVariants}
