@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FaDownload, FaNewspaper, FaImage, FaFileAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa'
+import { FaDownload, FaImage, FaFileAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa'
 
 const pressReleases = [
   {
