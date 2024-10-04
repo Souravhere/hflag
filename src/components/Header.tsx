@@ -53,7 +53,7 @@ export default function Header() {
     <AnimatePresence>
       {showHeader && (
         <motion.header
-          className="bg-[#3D3737]/70 backdrop-blur-md sm:h-fit h-[60px] italic shadow-md fixed top-0 left-0 w-full z-50"
+          className="sm:bg-[#3D3737]/70 backdrop-blur-md bg-[#3a3230] sm:h-fit h-[60px] italic shadow-md fixed top-0 left-0 w-full z-50"
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
@@ -95,7 +95,7 @@ export default function Header() {
           <AnimatePresence>
             {isMenuOpen && (
               <motion.nav
-                className="md:hidden bg-[#3D3737]/70 backdrop-blur-xl py-4 fixed top-[60px] left-0 w-full h-[calc(100vh-60px)] flex flex-col"
+                className="md:hidden bg-[#3a3230] py-4 fixed top-[60px] left-0 w-full h-[calc(100vh-60px)] flex flex-col"
                 initial={{ x: "-100%", opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: "-100%", opacity: 0 }}
