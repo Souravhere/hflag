@@ -100,7 +100,7 @@ export default function WhitePaperPage() {
         </motion.h1>
 
         <motion.p variants={itemVariants} className="text-lg text-gray-300 text-center mb-12">
-          Discover the revolutionary vision and technology behind Hflag's halal ecosystem
+          Discover the revolutionary vision and technology behind Hflags halal ecosystem
         </motion.p>
 
         <motion.div variants={itemVariants} className="mb-12">
