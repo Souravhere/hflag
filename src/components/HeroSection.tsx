@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MdOutlineArrowOutward } from "react-icons/md";
+import Link from 'next/link';
 
 const orangeTexts = [
   "Liiving",
@@ -79,6 +80,7 @@ export default function HeroSection() {
           Discover a global marketplace for halal-certified products, built on
           transparency, innovation, and ethical choices.
         </motion.p>
+        <Link href="/about">
         <motion.button
           className="bg-[#D55123] text-white px-8 py-3 rounded-full text-lg font-semibold flex items-center justify-center mx-auto hover:bg-[#FF6B35] transition-colors duration-300"
           whileHover={{ scale: 1.05 }}
@@ -90,6 +92,7 @@ export default function HeroSection() {
           Know More
           <MdOutlineArrowOutward className="ml-2" size={20} />
         </motion.button>
+        </Link>
       </div>
       <p>{displayText}</p> {/* Displaying the text */}
     </div>
