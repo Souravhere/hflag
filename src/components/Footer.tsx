@@ -119,7 +119,7 @@ export default function Footer() {
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     {link.name}
-                  </motion.a>
+                  </motion.a>   
                 </li>
               ))}
             </ul>
