@@ -1,11 +1,11 @@
 'use client'
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import Link from 'next/link'
-import { FaTelegramPlane, FaInstagram, FaLinkedin } from 'react-icons/fa'
-import Image from 'next/image'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import Link from 'next/link';
+import { FaTelegramPlane, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import Image from 'next/image';
 
 const footerSections = [
   {
@@ -31,19 +31,19 @@ const footerSections = [
       { name: 'Terms of Service', href: '/terms' },
     ],
   },
-]
+];
 
 const socialIcons = [
   { Icon: FaTelegramPlane, href: 'https://t.me/hflag' },
   { Icon: FaInstagram, href: 'https://instagram.com/hflag' },
   { Icon: FaLinkedin, href: 'https://linkedin.com/company/hflag' },
-]
+];
 
 export default function Footer() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -55,7 +55,7 @@ export default function Footer() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -66,7 +66,7 @@ export default function Footer() {
         duration: 0.5,
       },
     },
-  }
+  };
 
   return (
     <motion.footer
@@ -108,12 +108,12 @@ export default function Footer() {
               {section.links.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} passHref>
-                    <motion.a
+                    <motion.span
                       whileHover={{ x: 5, color: '#F97316' }}
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       {link.name}
-                    </motion.a>
+                    </motion.span>
                   </Link>
                 </li>
               ))}
@@ -129,5 +129,5 @@ export default function Footer() {
         © {new Date().getFullYear()} HFLAG. All rights reserved.
       </motion.div>
     </motion.footer>
-  )
+  );
 }

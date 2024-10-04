@@ -9,6 +9,7 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -92,17 +93,17 @@ export default function RootLayout({
         <meta property="og:description" content="Explore the Hflag platform, empowering halal living with blockchain technology and token rewards." />
         <meta property="og:url" content="https://www.hflag.io" />
         <meta property="og:site_name" content="Hflag" />
-        <meta property="og:image" content="https://hflag.vercel.app/open-graph.png" /> {/* Replace with your image URL */}
+        <meta property="og:image" content="https://hflag.vercel.app/open-graph.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@HflagOfficial" /> {/* Replace with your Twitter handle */}
+        <meta name="twitter:site" content="@HflagOfficial" />
         <meta name="twitter:title" content="Hflag - Empowering Halal Living with Blockchain Technology" />
         <meta name="twitter:description" content="Join Hflag, a Web3 platform offering blockchain-powered halal living solutions." />
-        <meta name="twitter:image" content="https://hflag.vercel.app/open-graph.png" /> {/* Replace with your image URL */}
+        <meta name="twitter:image" content="https://hflag.vercel.app/open-graph.png" />
 
         {/* Favicon */}
         <link rel="icon" href="/logo.png" sizes="any" />
