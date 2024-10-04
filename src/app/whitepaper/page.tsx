@@ -79,9 +79,12 @@ export default function WhitePaperPage() {
   }
 
   const handleDownload = () => {
-    // In a real application, this would trigger the download of the actual whitepaper PDF
-    alert("Downloading whitepaper...")
-  }
+    // Path to the whitepaper in the public directory
+    const fileUrl = '/Hflag-white-paper.pdf';
+  
+    // This will trigger the download of the PDF file
+    window.open(fileUrl, '_blank');
+  };
 
   return (
     <motion.div
