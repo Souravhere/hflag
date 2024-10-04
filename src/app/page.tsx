@@ -8,7 +8,7 @@ import WelcomeComponent from "@/components/WelcomeComponent";
 
 export default function Home() {
   return (
-    <div className="bg-black w-full text-white">
+    <div className="bg-[#1E1E1E] w-full text-white">
         <HeroSection/>
         <WelcomeComponent/>
         <Marketplace/>

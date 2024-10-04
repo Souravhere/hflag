@@ -79,7 +79,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 italic md:grid-cols-2 lg:grid-cols-4 gap-8">
         <motion.div variants={itemVariants} className="col-span-1 md:col-span-2 lg:col-span-1">
           <Link href="/" className="flex items-center mb-4">
-          <Image src="/logo.png" alt="Logo" width={60} height={60} />
+            <Image src="/logo.png" alt="Logo" width={60} height={60} />
             <span className="text-2xl font-bold">HFLAG</span>
           </Link>
           <p className="text-sm text-gray-400 mb-4">
@@ -107,13 +107,14 @@ export default function Footer() {
             <ul className="space-y-2">
               {section.links.map((link) => (
                 <li key={link.name}>
-                  <motion.a
-                    href={link.href}
-                    whileHover={{ x: 5, color: '#F97316' }}
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    {link.name}
-                  </motion.a>   
+                  <Link href={link.href} passHref>
+                    <motion.a
+                      whileHover={{ x: 5, color: '#F97316' }}
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      {link.name}
+                    </motion.a>
+                  </Link>
                 </li>
               ))}
             </ul>
