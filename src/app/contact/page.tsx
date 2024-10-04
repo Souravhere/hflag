@@ -73,7 +73,7 @@ export default function ContactPage() {
         </motion.p>
         {/* Top content for trust-building */}
         <motion.div variants={itemVariants} className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-2">We're Here to Help</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-2">W are Here to Help</h2>
           <p className="text-lg text-gray-300 mb-4">
             At Hflag, we value your feedback and are committed to providing excellent service. 
             If you have questions, suggestions, or just want to connect, dont hesitate to reach out!
