@@ -81,14 +81,14 @@ export default function ContactPage() {
         </motion.h1>
 
         <motion.p variants={itemVariants} className="text-lg text-gray-300 text-center mb-12">
-          We love to hear from you. Please fill out the form below, and we'll get back to you as soon as possible.
+          We love to hear from you. Please fill out the form below, and we get back to you as soon as possible.
         </motion.p>
         {/* Top content for trust-building */}
         <motion.div variants={itemVariants} className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-semibold mb-2">We Are Here to Help</h2>
           <p className="text-lg text-gray-300 mb-4">
             At Hflag, we value your feedback and are committed to providing excellent service. 
-            If you have questions, suggestions, or just want to connect, don't hesitate to reach out!
+            If you have questions, suggestions, or just want to connect, dont hesitate to reach out!
           </p>
         </motion.div>
 
