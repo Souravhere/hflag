@@ -81,7 +81,7 @@ export default function BrandPressPage() {
         </motion.h1>
 
         <motion.p variants={itemVariants} className="text-lg text-gray-300 text-center mb-12">
-          Explore Hflag's brand assets and latest press releases. Stay up-to-date with our journey in revolutionizing the halal marketplace.
+          Explore Hflag brand assets and latest press releases. Stay up-to-date with our journey in revolutionizing the halal marketplace.
         </motion.p>
 
         <motion.section variants={itemVariants} className="mb-16">
