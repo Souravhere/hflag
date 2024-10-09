@@ -117,7 +117,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-7xl`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-7xl mx-auto`}
       >
         <Header />
         {children}
