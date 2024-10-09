@@ -4,7 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
-import { FaTelegramPlane, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaTelegramPlane } from 'react-icons/fa';
+import { RiTwitterXFill } from "react-icons/ri";
 import Image from 'next/image';
 
 const footerSections = [
@@ -35,8 +36,7 @@ const footerSections = [
 
 const socialIcons = [
   { Icon: FaTelegramPlane, href: 'https://t.me/hflag' },
-  { Icon: FaInstagram, href: 'https://instagram.com/hflag' },
-  { Icon: FaLinkedin, href: 'https://linkedin.com/company/hflag' },
+  { Icon: RiTwitterXFill , href: 'https://instagram.com/hflag' }
 ];
 
 export default function Footer() {
