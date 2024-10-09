@@ -35,8 +35,8 @@ const footerSections = [
 ];
 
 const socialIcons = [
-  { Icon: FaTelegramPlane, href: 'https://t.me/hflag' },
-  { Icon: RiTwitterXFill , href: 'https://instagram.com/hflag' }
+  { Icon: FaTelegramPlane, href: 'https://t.me/hflagchat' },
+  { Icon: RiTwitterXFill , href: 'https://x.com/HFLAG_' }
 ];
 
 export default function Footer() {
